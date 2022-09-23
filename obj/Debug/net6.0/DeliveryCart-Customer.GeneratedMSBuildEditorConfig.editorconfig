@@ -35,6 +35,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVsaXZlcnlEcml2ZXJzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVsaXZlcnlEcml2ZXJzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVsaXZlcnlEcml2ZXJzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVsaXZlcnlEcml2ZXJzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVsaXZlcnlEcml2ZXJzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

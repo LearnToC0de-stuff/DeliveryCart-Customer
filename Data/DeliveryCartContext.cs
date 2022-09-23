@@ -15,5 +15,7 @@ namespace Data
         }
 
         public DbSet<DeliveryCart.Models.Customer> Customer { get; set; } = default!;
+        public DbSet<DeliveryCart.Models.DeliveryDriver> DeliveryDriver { get; set; } = default!;
+
     }
 }

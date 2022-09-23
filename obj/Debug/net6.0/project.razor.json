@@ -16303,6 +16303,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Details.cshtml",
+      "TargetPath": "Pages\\DeliveryDrivers\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -16313,6 +16318,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Edit.cshtml",
+      "TargetPath": "Pages\\DeliveryDrivers\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
@@ -16320,6 +16330,11 @@
     {
       "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Customers/Edit.cshtml",
       "TargetPath": "Pages\\Customers\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Index.cshtml",
+      "TargetPath": "Pages\\DeliveryDrivers\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16343,6 +16358,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Create.cshtml",
+      "TargetPath": "Pages\\DeliveryDrivers\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Customers/Create.cshtml",
       "TargetPath": "Pages\\Customers\\Create.cshtml",
       "FileKind": "mvc"
@@ -16350,6 +16370,11 @@
     {
       "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Privacy.cshtml",
       "TargetPath": "Pages\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/DeliveryDrivers/Delete.cshtml",
+      "TargetPath": "Pages\\DeliveryDrivers\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
