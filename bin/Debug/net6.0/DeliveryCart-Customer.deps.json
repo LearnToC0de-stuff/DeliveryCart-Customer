@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DeliveryCart-Customer/1.0.0": {
+        "runtime": {
+          "DeliveryCart-Customer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DeliveryCart-Customer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
