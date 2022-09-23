@@ -1,2 +1,2 @@
 # DeliveryCart-Customer
-An online grocery delivery systems developed by Sawyer MAtteson and Nicole Davenport
+An online grocery delivery systems developed by Sawyer Matteson and Nicole Davenport
