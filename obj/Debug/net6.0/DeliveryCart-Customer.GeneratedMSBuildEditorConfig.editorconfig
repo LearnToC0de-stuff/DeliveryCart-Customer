@@ -15,6 +15,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Customers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Customers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/sawyermatteson/Desktop/Github/DeliveryCart-Customer/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
