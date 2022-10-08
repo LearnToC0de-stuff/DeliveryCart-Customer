@@ -17,5 +17,64 @@ namespace Data
         public DbSet<DeliveryCart.Models.Customer> Customer { get; set; } = default!;
         public DbSet<DeliveryCart.Models.DeliveryDriver> DeliveryDriver { get; set; } = default!;
 
+        #region snippet1
+        public async virtual Task<List<Customer>> GetMessagesAsync()
+        {
+            return await Customer
+                .OrderBy(customer => customer.customerName)
+                .AsNoTracking()
+                .ToListAsync();
+        }
+        #endregion
+
+        #region snippet2
+        public async virtual Task AddMessageAsync(Customer customer)
+        {
+            await Customer.AddAsync(customer);
+            await SaveChangesAsync();
+        }
+        #endregion
+
+        #region snippet3
+        public async virtual Task DeleteAllMessagesAsync()
+        {
+            foreach (Customer customer in Customer)
+            {
+                Customer.Remove(customer);
+            }
+
+            await SaveChangesAsync();
+        }
+        #endregion
+
+        #region snippet4
+        public async virtual Task DeleteMessageAsync(int id)
+        {
+            var message = await Customer.FindAsync(id);
+
+            if (message != null)
+            {
+                Customer.Remove(message);
+                await SaveChangesAsync();
+            }
+        }
+        #endregion
+
+        public void Initialize()
+        {
+            Customer.AddRange(GetSeedingMessages());
+            SaveChanges();
+        }
+
+        public static List<Customer> GetSeedingMessages()
+        {
+            return new List<Customer>()
+            {
+                new Customer(){ customerName = "I don't understand." },
+                new Customer(){ customerName = "I really don't" },
+                new Customer(){ customerName = "Bill" }
+            };
+        }
+
     }
 }
