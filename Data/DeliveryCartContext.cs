@@ -18,7 +18,7 @@ namespace Data
         public DbSet<DeliveryCart.Models.DeliveryDriver> DeliveryDriver { get; set; } = default!;
 
         #region snippet1
-        public async virtual Task<List<Customer>> GetMessagesAsync()
+        public async virtual Task<List<Customer>> GetCustomersAsync()
         {
             return await Customer
                 .OrderBy(customer => customer.customerName)
@@ -28,7 +28,7 @@ namespace Data
         #endregion
 
         #region snippet2
-        public async virtual Task AddMessageAsync(Customer customer)
+        public async virtual Task AddCustomerAsync(Customer customer)
         {
             await Customer.AddAsync(customer);
             await SaveChangesAsync();
@@ -36,7 +36,7 @@ namespace Data
         #endregion
 
         #region snippet3
-        public async virtual Task DeleteAllMessagesAsync()
+        public async virtual Task DeleteAllCustomersAsync()
         {
             foreach (Customer customer in Customer)
             {
@@ -48,13 +48,13 @@ namespace Data
         #endregion
 
         #region snippet4
-        public async virtual Task DeleteMessageAsync(int id)
+        public async virtual Task DeleteCustomerAsync(int id)
         {
-            var message = await Customer.FindAsync(id);
+            var customer = await Customer.FindAsync(id);
 
-            if (message != null)
+            if (customer != null)
             {
-                Customer.Remove(message);
+                Customer.Remove(customer);
                 await SaveChangesAsync();
             }
         }
@@ -62,11 +62,11 @@ namespace Data
 
         public void Initialize()
         {
-            Customer.AddRange(GetSeedingMessages());
+            Customer.AddRange(GetSeedingCustomers());
             SaveChanges();
         }
 
-        public static List<Customer> GetSeedingMessages()
+        public static List<Customer> GetSeedingCustomers()
         {
             return new List<Customer>()
             {

@@ -11,56 +11,56 @@ namespace DeliveryCart_Customer.Tests.UnitTests
     public class DataAccessLayerTest
     {
         [Fact]
-        public async Task GetMessagesAsync_MessagesAreReturned()
+        public async Task GetCustomersAsync_CustomersAreReturned()
         {
             using (var db = new DeliveryCartContext(Utilities.TestDbContextOptions()))
             {
                 // Arrange
-                var expectedMessages = DeliveryCartContext.GetSeedingMessages();
-                await db.AddRangeAsync(expectedMessages);
+                var expectedCustomers = DeliveryCartContext.GetSeedingCustomers();
+                await db.AddRangeAsync(expectedCustomers);
                 await db.SaveChangesAsync();
 
                 // Act
-                var result = await db.GetMessagesAsync();
+                var result = await db.GetCustomersAsync();
 
                 // Assert
-                var actualMessages = Assert.IsAssignableFrom<List<Customer>>(result);
+                var actualCustomers = Assert.IsAssignableFrom<List<Customer>>(result);
                 Assert.Equal(
-                    expectedMessages.OrderBy(m => m.customerID).Select(m => m.customerName),
-                    actualMessages.OrderBy(m => m.customerID).Select(m => m.customerName));
+                    expectedCustomers.OrderBy(m => m.customerID).Select(m => m.customerName),
+                    actualCustomers.OrderBy(m => m.customerID).Select(m => m.customerName));
             }
         }
 
         [Fact]
-        public async Task AddMessageAsync_MessageIsAdded()
+        public async Task AddCustomerAsync_CustomerIsAdded()
         {
             using (var db = new DeliveryCartContext(Utilities.TestDbContextOptions()))
             {
                 // Arrange
                 var recId = 10;
-                var expectedMessage = new Customer() { customerID = recId, customerName = "Name" };
+                var expectedCustomer = new Customer() { customerID = recId, customerName = "Name" };
 
                 // Act
-                await db.AddMessageAsync(expectedMessage);
+                await db.AddCustomerAsync(expectedCustomer);
 
                 // Assert
-                var actualMessage = await db.FindAsync<Customer>(recId);
-                Assert.Equal(expectedMessage, actualMessage);
+                var actualCustomer = await db.FindAsync<Customer>(recId);
+                Assert.Equal(expectedCustomer, actualCustomer);
             }
         }
 
         [Fact]
-        public async Task DeleteAllMessagesAsync_MessagesAreDeleted()
+        public async Task DeleteAllCustomersAsync_CustomersAreDeleted()
         {
             using (var db = new DeliveryCartContext(Utilities.TestDbContextOptions()))
             {
                 // Arrange
-                var seedMessages = DeliveryCartContext.GetSeedingMessages();
-                await db.AddRangeAsync(seedMessages);
+                var seedCustomers = DeliveryCartContext.GetSeedingCustomers();
+                await db.AddRangeAsync(seedCustomers);
                 await db.SaveChangesAsync();
 
                 // Act
-                await db.DeleteAllMessagesAsync();
+                await db.DeleteAllCustomersAsync();
 
                 // Assert
                 Assert.Empty(await db.Customer.AsNoTracking().ToListAsync());
@@ -68,51 +68,51 @@ namespace DeliveryCart_Customer.Tests.UnitTests
         }
 
         [Fact]
-        public async Task DeleteMessageAsync_MessageIsDeleted_WhenMessageIsFound()
+        public async Task DeleteCustomerAsync_CustomerIsDeleted_WhenCustomerIsFound()
         {
             using (var db = new DeliveryCartContext(Utilities.TestDbContextOptions()))
             {
                 #region snippet1
                 // Arrange
-                var seedMessages = DeliveryCartContext.GetSeedingMessages();
-                await db.AddRangeAsync(seedMessages);
+                var seedCustomers = DeliveryCartContext.GetSeedingCustomers();
+                await db.AddRangeAsync(seedCustomers);
                 await db.SaveChangesAsync();
                 var recId = 1;
-                var expectedMessages =
-                    seedMessages.Where(customer => customer.customerID != recId).ToList();
+                var expectedCustomers =
+                    seedCustomers.Where(customer => customer.customerID != recId).ToList();
                 #endregion
 
                 #region snippet2
                 // Act
-                await db.DeleteMessageAsync(recId);
+                await db.DeleteCustomerAsync(recId);
                 #endregion
 
                 #region snippet3
                 // Assert
-                var actualMessages = await db.Customer.AsNoTracking().ToListAsync();
+                var actualCustomers = await db.Customer.AsNoTracking().ToListAsync();
                 Assert.Equal(
-                    expectedMessages.OrderBy(m => m.customerID).Select(m => m.customerName),
-                    actualMessages.OrderBy(m => m.customerID).Select(m => m.customerName));
+                    expectedCustomers.OrderBy(m => m.customerID).Select(m => m.customerName),
+                    actualCustomers.OrderBy(m => m.customerID).Select(m => m.customerName));
                 #endregion
             }
         }
 
         #region snippet4
         [Fact]
-        public async Task DeleteMessageAsync_NoMessageIsDeleted_WhenMessageIsNotFound()
+        public async Task DeleteCustomerAsync_NoCustomerIsDeleted_WhenCustomerIsNotFound()
         {
             using (var db = new DeliveryCartContext(Utilities.TestDbContextOptions()))
             {
                 // Arrange
-                var expectedMessages = DeliveryCartContext.GetSeedingMessages();
-                await db.AddRangeAsync(expectedMessages);
+                var expectedCustomers = DeliveryCartContext.GetSeedingCustomers();
+                await db.AddRangeAsync(expectedCustomers);
                 await db.SaveChangesAsync();
                 var recId = 4;
 
                 // Act
                 try
                 {
-                    await db.DeleteMessageAsync(recId);
+                    await db.DeleteCustomerAsync(recId);
                 }
                 catch
                 {
@@ -120,10 +120,10 @@ namespace DeliveryCart_Customer.Tests.UnitTests
                 }
 
                 // Assert
-                var actualMessages = await db.Customer.AsNoTracking().ToListAsync();
+                var actualCustomers = await db.Customer.AsNoTracking().ToListAsync();
                 Assert.Equal(
-                    expectedMessages.OrderBy(m => m.customerID).Select(m => m.customerName),
-                    actualMessages.OrderBy(m => m.customerID).Select(m => m.customerName));
+                    expectedCustomers.OrderBy(m => m.customerID).Select(m => m.customerName),
+                    actualCustomers.OrderBy(m => m.customerID).Select(m => m.customerName));
             }
         }
         #endregion
