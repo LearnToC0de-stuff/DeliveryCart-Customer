@@ -5,10 +5,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Driver Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New Driver</a>
 </p>
 <table class="table">
     <thead>
@@ -19,9 +19,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.DeliveryDriver[0].deliveryDriverPhoneNumber)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.DeliveryDriver[0].orderID)
-            </th>
+            </th> *@
             <th></th>
         </tr>
     </thead>
@@ -34,13 +34,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.deliveryDriverPhoneNumber)
             </td>
-            <td>
+            @* <td>
                 @Html.DisplayFor(modelItem => item.orderID)
-            </td>
+            </td> *@
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.deliveryDriverID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.deliveryDriverID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.deliveryDriverID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.deliveryDriverID">Edit Driver</a> |
+                <a asp-page="./Details" asp-route-id="@item.deliveryDriverID">Driver Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.deliveryDriverID">Delete Driver</a>
             </td>
         </tr>
 }

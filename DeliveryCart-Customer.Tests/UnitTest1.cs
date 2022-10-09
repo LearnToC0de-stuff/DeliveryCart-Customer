@@ -38,7 +38,7 @@ namespace DeliveryCart_Customer.Tests.UnitTests
             {
                 // Arrange
                 var recId = 10;
-                var expectedCustomer = new Customer() { customerID = recId, customerName = "Name" };
+                var expectedCustomer = new Customer() { customerID = recId, customerName = "Name", customerAddress = "333 South Lane", customerEmail = "ggg@g.com", customerPhoneNumber = 1};
 
                 // Act
                 await db.AddCustomerAsync(expectedCustomer);

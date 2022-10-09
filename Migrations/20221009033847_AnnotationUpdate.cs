@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DeliveryCart_Customer.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class AnnotationUpdate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,9 +15,9 @@ namespace DeliveryCart_Customer.Migrations
                 {
                     customerID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    customerName = table.Column<string>(type: "TEXT", nullable: true),
-                    customerEmail = table.Column<string>(type: "TEXT", nullable: true),
-                    customerAddress = table.Column<string>(type: "TEXT", nullable: true),
+                    customerName = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false),
+                    customerEmail = table.Column<string>(type: "TEXT", nullable: false),
+                    customerAddress = table.Column<string>(type: "TEXT", maxLength: 40, nullable: false),
                     customerPhoneNumber = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -31,9 +31,8 @@ namespace DeliveryCart_Customer.Migrations
                 {
                     deliveryDriverID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    deliveryDriverName = table.Column<string>(type: "TEXT", nullable: true),
-                    deliveryDriverPhoneNumber = table.Column<int>(type: "INTEGER", nullable: true),
-                    orderID = table.Column<int>(type: "INTEGER", nullable: false)
+                    deliveryDriverName = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false),
+                    deliveryDriverPhoneNumber = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -62,16 +61,16 @@ namespace DeliveryCart_Customer.Migrations
                     orderID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     orderDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    customerID = table.Column<string>(type: "TEXT", nullable: true),
-                    customerID1 = table.Column<int>(type: "INTEGER", nullable: true),
-                    deliveryDriverID = table.Column<int>(type: "INTEGER", nullable: true)
+                    customerID = table.Column<int>(type: "INTEGER", nullable: true),
+                    deliveryDriverID = table.Column<int>(type: "INTEGER", nullable: true),
+                    itemID = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Order", x => x.orderID);
                     table.ForeignKey(
-                        name: "FK_Order_Customer_customerID1",
-                        column: x => x.customerID1,
+                        name: "FK_Order_Customer_customerID",
+                        column: x => x.customerID,
                         principalTable: "Customer",
                         principalColumn: "customerID");
                     table.ForeignKey(
@@ -111,9 +110,9 @@ namespace DeliveryCart_Customer.Migrations
                 column: "orderItemsitemID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Order_customerID1",
+                name: "IX_Order_customerID",
                 table: "Order",
-                column: "customerID1");
+                column: "customerID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Order_deliveryDriverID",

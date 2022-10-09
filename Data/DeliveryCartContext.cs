@@ -70,9 +70,9 @@ namespace Data
         {
             return new List<Customer>()
             {
-                new Customer(){ customerName = "I don't understand." },
-                new Customer(){ customerName = "I really don't" },
-                new Customer(){ customerName = "Bill" }
+                new Customer(){ customerName = "I don't understand.", customerAddress = "234 South Lane", customerEmail = "rich@gmail.com", customerPhoneNumber = 1 },
+                new Customer(){ customerName = "I really don't" , customerAddress = "456 South Lane", customerEmail = "rich1@gmail.com", customerPhoneNumber = 2 },
+                new Customer(){ customerName = "Bill" , customerAddress = "678 South Lane", customerEmail = "rich2@gmail.com", customerPhoneNumber = 3 }
             };
         }
 

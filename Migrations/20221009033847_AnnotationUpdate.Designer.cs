@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DeliveryCart_Customer.Migrations
 {
     [DbContext(typeof(DeliveryCartContext))]
-    [Migration("20220923195005_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20221009033847_AnnotationUpdate")]
+    partial class AnnotationUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,12 +26,17 @@ namespace DeliveryCart_Customer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("customerAddress")
+                        .IsRequired()
+                        .HasMaxLength(40)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("customerEmail")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("customerName")
+                        .IsRequired()
+                        .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("customerPhoneNumber")
@@ -49,12 +54,12 @@ namespace DeliveryCart_Customer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("deliveryDriverName")
+                        .IsRequired()
+                        .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("deliveryDriverPhoneNumber")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("orderID")
+                        .IsRequired()
                         .HasColumnType("INTEGER");
 
                     b.HasKey("deliveryDriverID");
@@ -88,13 +93,13 @@ namespace DeliveryCart_Customer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("customerID")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("customerID1")
+                    b.Property<int?>("customerID")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("deliveryDriverID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("itemID")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("orderDate")
@@ -102,7 +107,7 @@ namespace DeliveryCart_Customer.Migrations
 
                     b.HasKey("orderID");
 
-                    b.HasIndex("customerID1");
+                    b.HasIndex("customerID");
 
                     b.HasIndex("deliveryDriverID");
 
@@ -128,7 +133,7 @@ namespace DeliveryCart_Customer.Migrations
                 {
                     b.HasOne("DeliveryCart.Models.Customer", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("customerID1");
+                        .HasForeignKey("customerID");
 
                     b.HasOne("DeliveryCart.Models.DeliveryDriver", "DeliveryDriver")
                         .WithMany("Orders")
